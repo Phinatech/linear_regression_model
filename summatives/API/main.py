@@ -94,7 +94,7 @@ app.add_middleware(
         "http://localhost:3000",                         # React / Next.js local dev server
         "http://localhost:8000",                         # FastAPI local (Swagger UI self-calls)
         "http://127.0.0.1:8000",                         # same host, numeric loopback form
-        "https://student-performance-api.onrender.com",  # production Render back-end URL
+        "https://student-performance-api-li3g.onrender.com",  # production Render back-end URL
         "https://student-perf-frontend.onrender.com",    # front-end app if separately hosted
     ],
     allow_credentials=True,
@@ -117,7 +117,7 @@ app.add_middleware(
 # ==============================================================
 MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "saved_model")
  
- 
+
 def load_artefacts():
     """Load the best model, scaler, and feature list from disk."""
     mdl   = joblib.load(os.path.join(MODEL_DIR, "best_model.pkl"))
