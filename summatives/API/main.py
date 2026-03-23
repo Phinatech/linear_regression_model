@@ -115,7 +115,7 @@ app.add_middleware(
 # ==============================================================
 # LOAD MODEL ARTEFACTS FROM TASK 1
 # ==============================================================
-MODEL_DIR = "saved_model"
+MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "saved_model")
  
  
 def load_artefacts():
