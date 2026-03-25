@@ -49,12 +49,12 @@ class ResultDisplay extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: const Color(0xFFE2E8F0)),
+          border: Border.all(color: const Color(0xFFFFCC80)),
         ),
         child: const Center(
           child: Text(
             'Your prediction result will appear here.',
-            style: TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
+            style: TextStyle(color: Colors.black54, fontSize: 13),
           ),
         ),
       );
@@ -95,7 +95,7 @@ class ResultDisplay extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFFE2E8F0)),
+        border: Border.all(color: const Color(0xFFFFCC80)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.04),
@@ -111,7 +111,7 @@ class ResultDisplay extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 24),
             decoration: const BoxDecoration(
-              color: Color(0xFF2563EB),
+              color: Color(0xFFFF9800),
               borderRadius:
                   BorderRadius.vertical(top: Radius.circular(12)),
             ),
@@ -120,7 +120,7 @@ class ResultDisplay extends StatelessWidget {
                 const Text(
                   'Predicted Final Grade (G3)',
                   style: TextStyle(
-                      color: Color(0xFFBFDBFE), fontSize: 13),
+                      color: Colors.white70, fontSize: 13),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -153,7 +153,7 @@ class ResultDisplay extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.w500,
-                          color: Color(0xFF64748B),
+                          color: Colors.black54,
                         ),
                       ),
                       const SizedBox(height: 2),

@@ -15,24 +15,24 @@ class StudentPredictorApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF2563EB),
+          seedColor: const Color(0xFFFF9800),
           brightness: Brightness.light,
         ),
+        scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
         inputDecorationTheme: InputDecorationTheme(
-          filled: true,
-          fillColor: const Color(0xFFF8FAFC),
+          filled: false,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+            borderSide: const BorderSide(color: Color(0xFFFFCC80)),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0xFFE2E8F0)),
+            borderSide: const BorderSide(color: Color(0xFFFFCC80)),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0xFF2563EB), width: 2),
+            borderSide: const BorderSide(color: Color(0xFFFF9800), width: 2),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -40,7 +40,7 @@ class StudentPredictorApp extends StatelessWidget {
           ),
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-          labelStyle: const TextStyle(color: Color(0xFF64748B), fontSize: 13),
+          labelStyle: const TextStyle(color: Colors.black87, fontSize: 13),
         ),
       ),
       home: const PredictionPage(),

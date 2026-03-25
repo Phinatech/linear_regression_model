@@ -20,36 +20,36 @@ class _PredictionPageState extends State<PredictionPage> {
   final _formKey = GlobalKey<FormState>();
  
   // ── Numeric text controllers ─────────────────
-  final _age        = TextEditingController(text: '16');
-  final _medu       = TextEditingController(text: '3');
-  final _fedu       = TextEditingController(text: '2');
-  final _traveltime = TextEditingController(text: '1');
-  final _studytime  = TextEditingController(text: '2');
-  final _failures   = TextEditingController(text: '0');
-  final _famrel     = TextEditingController(text: '4');
-  final _freetime   = TextEditingController(text: '3');
-  final _goout      = TextEditingController(text: '2');
-  final _dalc       = TextEditingController(text: '1');
-  final _walc       = TextEditingController(text: '2');
-  final _health     = TextEditingController(text: '4');
-  final _absences   = TextEditingController(text: '4');
+  final _age        = TextEditingController();
+  final _medu       = TextEditingController();
+  final _fedu       = TextEditingController();
+  final _traveltime = TextEditingController();
+  final _studytime  = TextEditingController();
+  final _failures   = TextEditingController();
+  final _famrel     = TextEditingController();
+  final _freetime   = TextEditingController();
+  final _goout      = TextEditingController();
+  final _dalc       = TextEditingController();
+  final _walc       = TextEditingController();
+  final _health     = TextEditingController();
+  final _absences   = TextEditingController();
  
   // ── Dropdown values ──────────────────────────
-  String _sex        = 'F';
-  String _address    = 'U';
-  String _famsize    = 'LE3';
-  String _pstatus    = 'T';
-  String _mjob       = 'services';
-  String _fjob       = 'other';
-  String _guardian   = 'mother';
-  String _schoolsup  = 'no';
-  String _famsup     = 'yes';
-  String _paid       = 'no';
-  String _activities = 'yes';
-  String _nursery    = 'yes';
-  String _higher     = 'yes';
-  String _internet   = 'yes';
-  String _romantic   = 'no';
+  String? _sex;
+  String? _address;
+  String? _famsize;
+  String? _pstatus;
+  String? _mjob;
+  String? _fjob;
+  String? _guardian;
+  String? _schoolsup;
+  String? _famsup;
+  String? _paid;
+  String? _activities;
+  String? _nursery;
+  String? _higher;
+  String? _internet;
+  String? _romantic;
  
   // ── Result state ─────────────────────────────
   String? _resultGrade;
@@ -70,27 +70,27 @@ class _PredictionPageState extends State<PredictionPage> {
  
   // ── Build payload for API ────────────────────
   Map<String, dynamic> _buildPayload() => {
-        'sex':        _sex,
+        'sex':        _sex!,
         'age':        int.parse(_age.text),
-        'address':    _address,
-        'famsize':    _famsize,
-        'Pstatus':    _pstatus,
+        'address':    _address!,
+        'famsize':    _famsize!,
+        'Pstatus':    _pstatus!,
         'Medu':       int.parse(_medu.text),
         'Fedu':       int.parse(_fedu.text),
-        'Mjob':       _mjob,
-        'Fjob':       _fjob,
-        'guardian':   _guardian,
+        'Mjob':       _mjob!,
+        'Fjob':       _fjob!,
+        'guardian':   _guardian!,
         'traveltime': int.parse(_traveltime.text),
         'studytime':  int.parse(_studytime.text),
         'failures':   int.parse(_failures.text),
-        'schoolsup':  _schoolsup,
-        'famsup':     _famsup,
-        'paid':       _paid,
-        'activities': _activities,
-        'nursery':    _nursery,
-        'higher':     _higher,
-        'internet':   _internet,
-        'romantic':   _romantic,
+        'schoolsup':  _schoolsup!,
+        'famsup':     _famsup!,
+        'paid':       _paid!,
+        'activities': _activities!,
+        'nursery':    _nursery!,
+        'higher':     _higher!,
+        'internet':   _internet!,
+        'romantic':   _romantic!,
         'famrel':     int.parse(_famrel.text),
         'freetime':   int.parse(_freetime.text),
         'goout':      int.parse(_goout.text),
@@ -130,21 +130,21 @@ class _PredictionPageState extends State<PredictionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF1F5F9),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF4ADE80),
-        foregroundColor: Colors.white,
+        backgroundColor: const Color(0xFFFF9800),
+        foregroundColor: Colors.black,
         elevation: 0,
         title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Student Grade Predictor',
-              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600, color: Colors.white),
             ),
             Text(
               'Early Intervention Tool',
-              style: TextStyle(fontSize: 11, color: Color(0xFFBFDBFE)),
+              style: TextStyle(fontSize: 11, color: Colors.white70),
             ),
           ],
         ),
@@ -162,7 +162,7 @@ class _PredictionPageState extends State<PredictionPage> {
             const SizedBox(height: 12),
  
             // ── Section 1: Demographic ──
-            const SectionHeader('Demographic', Icons.person_outline),
+            const SectionHeader('Demographic'),
             TwoColumn(
               left: AppDropdown(
                 label: 'Sex',
@@ -199,8 +199,7 @@ class _PredictionPageState extends State<PredictionPage> {
             const SizedBox(height: 4),
  
             // ── Section 2: Parental Background ──
-            const SectionHeader(
-                'Parental Background', Icons.family_restroom),
+            const SectionHeader('Parental Background'),
             TwoColumn(
               left: NumField(_medu, 'Mother edu (0–4)', min: 0, max: 4),
               right: NumField(_fedu, 'Father edu (0–4)', min: 0, max: 4),
@@ -230,13 +229,10 @@ class _PredictionPageState extends State<PredictionPage> {
             const SizedBox(height: 4),
  
             // ── Section 3: School Behaviour ──
-            const SectionHeader(
-                'School Behaviour', Icons.school_outlined),
+            const SectionHeader('School Behaviour'),
             TwoColumn(
-              left: NumField(_traveltime, 'Travel time (1–4)',
-                  min: 1, max: 4, hint: '1=<15 min  4=>1h'),
-              right: NumField(_studytime, 'Study time (1–4)',
-                  min: 1, max: 4, hint: '1=<2h  4=>10h'),
+              left: NumField(_traveltime, 'Travel time (1–4)', min: 1, max: 4, hint: '1=<15 min  4=>1h'),
+              right: NumField(_studytime, 'Study time (1–4)', min: 1, max: 4, hint: '1=<2h  4=>10h'),
             ),
             NumField(_failures, 'Past failures (0–4)', min: 0, max: 4),
             TwoColumn(
@@ -290,27 +286,20 @@ class _PredictionPageState extends State<PredictionPage> {
             const SizedBox(height: 4),
  
             // ── Section 4: Social & Health ──
-            const SectionHeader(
-                'Social & Health', Icons.favorite_outline),
+            const SectionHeader('Social & Health'),
             TwoColumn(
-              left: NumField(_famrel, 'Family relation (1–5)',
-                  min: 1, max: 5, hint: '1=bad  5=excellent'),
-              right: NumField(_freetime, 'Free time (1–5)',
-                  min: 1, max: 5),
+              left: NumField(_famrel, 'Family relation (1–5)', min: 1, max: 5, hint: '1=bad  5=excellent'),
+              right: NumField(_freetime, 'Free time (1–5)', min: 1, max: 5),
             ),
             TwoColumn(
               left: NumField(_goout, 'Goes out (1–5)', min: 1, max: 5),
-              right: NumField(_health, 'Health (1–5)',
-                  min: 1, max: 5, hint: '1=bad  5=good'),
+              right: NumField(_health, 'Health (1–5)', min: 1, max: 5, hint: '1=bad  5=good'),
             ),
             TwoColumn(
-              left: NumField(_dalc, 'Weekday alcohol (1–5)',
-                  min: 1, max: 5),
-              right: NumField(_walc, 'Weekend alcohol (1–5)',
-                  min: 1, max: 5),
+              left: NumField(_dalc, 'Weekday alcohol (1–5)', min: 1, max: 5),
+              right: NumField(_walc, 'Weekend alcohol (1–5)', min: 1, max: 5),
             ),
-            NumField(_absences, 'School absences (0–93)',
-                min: 0, max: 93),
+            NumField(_absences, 'School absences (0–93)', min: 0, max: 93),
             const SizedBox(height: 24),
  
             // ── Predict button ──
@@ -319,7 +308,7 @@ class _PredictionPageState extends State<PredictionPage> {
               child: ElevatedButton(
                 onPressed: _loading ? null : _predict,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF4ADE80),
+                  backgroundColor: const Color(0xFFFF9800),
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
