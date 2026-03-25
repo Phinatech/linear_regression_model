@@ -94,6 +94,10 @@ app.add_middleware(
         "http://localhost:3000",                         # React / Next.js local dev server
         "http://localhost:8000",                         # FastAPI local (Swagger UI self-calls)
         "http://127.0.0.1:8000",                         # same host, numeric loopback form
+        "http://localhost:5000",                         # Flutter web local dev server
+        "http://localhost:5555",                         # Flutter web alt port
+        "http://localhost:8080",                         # Flutter web alt port
+        "http://127.0.0.1:5000",                         # Flutter web loopback
         "https://student-performance-api-li3g.onrender.com",  # production Render back-end URL
         "https://student-perf-frontend.onrender.com",    # front-end app if separately hosted
     ],

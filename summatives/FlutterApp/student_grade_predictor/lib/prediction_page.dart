@@ -132,7 +132,7 @@ class _PredictionPageState extends State<PredictionPage> {
     return Scaffold(
       backgroundColor: const Color(0xFFF1F5F9),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF2563EB),
+        backgroundColor: const Color(0xFF4ADE80),
         foregroundColor: Colors.white,
         elevation: 0,
         title: const Column(
@@ -319,7 +319,7 @@ class _PredictionPageState extends State<PredictionPage> {
               child: ElevatedButton(
                 onPressed: _loading ? null : _predict,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF2563EB),
+                  backgroundColor: const Color(0xFF4ADE80),
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
