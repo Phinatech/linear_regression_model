@@ -1,6 +1,6 @@
 # Task 2 — Student Performance Prediction API
 
-**Mission:** Early identification of academically at-risk students to enable targeted support in under-resourced school communities.
+**Mission:** Early identification of academically at-risk students to enable targeted support in under-resourced school communities. this 
 
 ---
 
