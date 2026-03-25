@@ -115,8 +115,9 @@ class NumField extends StatelessWidget {
         keyboardType: TextInputType.number,
         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         decoration: InputDecoration(
-          hintText: label,
-          hintStyle: const TextStyle(fontSize: 13, color: Colors.black38),
+          labelText: label,
+          labelStyle: const TextStyle(fontSize: 13, color: Colors.black38),
+          floatingLabelStyle: const TextStyle(fontSize: 13, color: Color(0xFFFF9800)),
         ),
         validator: (v) {
           if (v == null || v.isEmpty) return 'Required';
