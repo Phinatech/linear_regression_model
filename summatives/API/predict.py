@@ -25,7 +25,7 @@ model         = joblib.load(os.path.join(MODEL_DIR, "best_model.pkl"))
 scaler        = joblib.load(os.path.join(MODEL_DIR, "scaler.pkl"))
 feature_names = joblib.load(os.path.join(MODEL_DIR, "feature_names.pkl"))
  
-print("✅ Model loaded:", type(model).__name__)
+print(" Model loaded:", type(model).__name__)
 print(f"   Expects {len(feature_names)} features after encoding.\n")
  
  
@@ -119,11 +119,11 @@ def predict_batch(df_raw: pd.DataFrame) -> np.ndarray:
 def risk_label(grade: float) -> str:
     """Translate numeric grade into an intervention risk level."""
     if grade < 7:
-        return "🔴 HIGH RISK   — Urgent support recommended"
+        return " HIGH RISK   — Urgent support recommended"
     elif grade < 11:
-        return "🟡 MODERATE    — Monitor & provide extra resources"
+        return " MODERATE    — Monitor & provide extra resources"
     else:
-        return "🟢 ON TRACK    — Continue current support"
+        return " ON TRACK    — Continue current support"
  
  
 # ── Demo: predict for three example students ───────────────────
@@ -172,7 +172,7 @@ if __name__ == "__main__":
     for i, student in enumerate(EXAMPLE_STUDENTS, 1):
         grade = predict_single(student)
         label = risk_label(grade)
-        print(f"\n👤 Student {i}")
+        print(f"\n Student {i}")
         print(f"   Predicted Final Grade (G3): {grade:.1f} / 20")
         print(f"   Risk Assessment           : {label}")
  
@@ -184,6 +184,6 @@ if __name__ == "__main__":
     for i, g in enumerate(grades, 1):
         print(f"  Student {i}: G3 = {g:.1f}  →  {risk_label(g)}")
  
-    print("\n✅ Prediction script ready for Task 2 integration.")
+    print("\n Prediction script ready for Task 2 integration.")
     print("   Import with: from predict import predict_single, predict_batch")
  
