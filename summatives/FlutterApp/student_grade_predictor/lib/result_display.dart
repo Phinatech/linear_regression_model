@@ -49,7 +49,7 @@ class ResultDisplay extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: const Color(0xFFFFCC80)),
+          border: Border.all(color: const Color(0xFFD4856A)),
         ),
         child: const Center(
           child: Text(
@@ -95,7 +95,7 @@ class ResultDisplay extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFFFFCC80)),
+        border: Border.all(color: const Color(0xFFD4856A)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.04),
@@ -111,7 +111,7 @@ class ResultDisplay extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 24),
             decoration: const BoxDecoration(
-              color: Color(0xFFFF9800),
+              color: Color(0xFFC15F3C),
               borderRadius:
                   BorderRadius.vertical(top: Radius.circular(12)),
             ),

@@ -17,14 +17,14 @@ class InfoCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: const Color(0xFFFFF3E0),
+        color: const Color(0xFFFAEDE8),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: const Color(0xFFFFCC80)),
+        border: Border.all(color: const Color(0xFFD4856A)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.info_outline, color: Color(0xFFFF9800), size: 18),
+          const Icon(Icons.info_outline, color: Color(0xFFC15F3C), size: 18),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
@@ -50,7 +50,7 @@ class SectionHeader extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(children: [
         if (icon != null) ...[
-          Icon(icon, size: 18, color: const Color(0xFFFF9800)),
+          Icon(icon, size: 18, color: const Color(0xFFC15F3C)),
           const SizedBox(width: 6),
         ],
         Text(
@@ -63,7 +63,7 @@ class SectionHeader extends StatelessWidget {
         ),
         const SizedBox(width: 8),
         const Expanded(
-          child: Divider(color: Color(0xFFFFCC80), thickness: 1),
+          child: Divider(color: Color(0xFFD4856A), thickness: 1),
         ),
       ]),
     );
@@ -117,7 +117,7 @@ class NumField extends StatelessWidget {
         decoration: InputDecoration(
           labelText: label,
           labelStyle: const TextStyle(fontSize: 13, color: Colors.black38),
-          floatingLabelStyle: const TextStyle(fontSize: 13, color: Color(0xFFFF9800)),
+          floatingLabelStyle: const TextStyle(fontSize: 13, color: Color(0xFFC15F3C)),
         ),
         validator: (v) {
           if (v == null || v.isEmpty) return 'Required';
@@ -174,26 +174,26 @@ class AppDropdown extends StatelessWidget {
                   fillColor: Colors.white,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xFFFFCC80)),
+                    borderSide: const BorderSide(color: Color(0xFFD4856A)),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(color: Color(0xFFFFCC80)),
+                    borderSide: const BorderSide(color: Color(0xFFD4856A)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide:
-                        const BorderSide(color: Color(0xFFFF9800), width: 2),
+                        const BorderSide(color: Color(0xFFC15F3C), width: 2),
                   ),
                   contentPadding: const EdgeInsets.symmetric(
                       horizontal: 14, vertical: 12),
                 ),
                 trailingIcon: const Icon(
                     Icons.keyboard_arrow_down_rounded,
-                    color: Color(0xFFFF9800)),
+                    color: Color(0xFFC15F3C)),
                 selectedTrailingIcon: const Icon(
                     Icons.keyboard_arrow_up_rounded,
-                    color: Color(0xFFFF9800)),
+                    color: Color(0xFFC15F3C)),
                 dropdownMenuEntries: options.asMap().entries.map((e) {
                   final display =
                       labels != null ? labels![e.key] : e.value;

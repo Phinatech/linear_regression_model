@@ -15,7 +15,7 @@ class StudentPredictorApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFFF9800),
+          seedColor: const Color(0xFFC15F3C),
           brightness: Brightness.light,
         ),
         scaffoldBackgroundColor: Colors.white,
@@ -24,15 +24,15 @@ class StudentPredictorApp extends StatelessWidget {
           filled: false,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0xFFFFCC80)),
+            borderSide: const BorderSide(color: Color(0xFFD4856A)),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0xFFFFCC80)),
+            borderSide: const BorderSide(color: Color(0xFFD4856A)),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(color: Color(0xFFFF9800), width: 2),
+            borderSide: const BorderSide(color: Color(0xFFC15F3C), width: 2),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
