@@ -296,8 +296,8 @@ class _PredictionPageState extends State<PredictionPage> {
               right: NumField(_health, 'Health (1–5)', min: 1, max: 5, hint: '1=bad  5=good'),
             ),
             TwoColumn(
-              left: NumField(_dalc, 'Weekday alcohol (1–5)', min: 1, max: 5),
-              right: NumField(_walc, 'Weekend alcohol (1–5)', min: 1, max: 5),
+              left: NumField(_dalc, 'Weekday alcohol (0–5)', min: 0, max: 5),
+              right: NumField(_walc, 'Weekend alcohol (0–5)', min: 0, max: 5),
             ),
             NumField(_absences, 'School absences (0–93)', min: 0, max: 93),
             const SizedBox(height: 24),

@@ -256,12 +256,12 @@ class StudentInput(BaseModel):
         description="Frequency of going out with friends. 1 = very low, 5 = very high"
     )
     Dalc: int = Field(
-        ..., ge=1, le=5,
-        description="Workday alcohol consumption. 1 = very low, 5 = very high"
+        ..., ge=0, le=5,
+        description="Workday alcohol consumption. 0 = none, 1 = very low, 5 = very high"
     )
     Walc: int = Field(
-        ..., ge=1, le=5,
-        description="Weekend alcohol consumption. 1 = very low, 5 = very high"
+        ..., ge=0, le=5,
+        description="Weekend alcohol consumption. 0 = none, 1 = very low, 5 = very high"
     )
     health: int = Field(
         ..., ge=1, le=5,
