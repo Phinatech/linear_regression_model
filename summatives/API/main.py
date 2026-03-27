@@ -151,6 +151,7 @@ BINARY_MAP = {
     "romantic":   {"no": 0, "yes": 1},
 }
 MULTI_COLS = ["Mjob", "Fjob", "guardian"]
+GUARDIAN_MAP = {"both": "other"}   # model not trained on "both" → treat as "other"
  
 # ==============================================================
 # PYDANTIC INPUT SCHEMA
@@ -200,7 +201,7 @@ class StudentInput(BaseModel):
     Fjob: Literal["teacher", "health", "services", "at_home", "other"] = Field(
         ..., description="Father's occupation"
     )
-    guardian: Literal["mother", "father", "other"] = Field(
+    guardian: Literal["mother", "father", "both", "other"] = Field(
         ..., description="Student's primary guardian"
     )
  
@@ -326,6 +327,9 @@ class RetrainResponse(BaseModel):
 # ==============================================================
 def encode_student(raw: dict) -> pd.DataFrame:
     """Encode a raw student dict into the feature matrix the model expects."""
+    raw = dict(raw)
+    if raw.get("guardian") in GUARDIAN_MAP:
+        raw["guardian"] = GUARDIAN_MAP[raw["guardian"]]
     df = pd.DataFrame([raw])
     for col, mapping in BINARY_MAP.items():
         if col in df.columns:

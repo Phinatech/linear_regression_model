@@ -223,7 +223,7 @@ class _PredictionPageState extends State<PredictionPage> {
             AppDropdown(
               label: 'Guardian',
               value: _guardian,
-              options: const ['mother', 'father', 'other'],
+              options: const ['mother', 'father', 'both', 'other'],
               onChanged: (v) => setState(() => _guardian = v!),
             ),
             const SizedBox(height: 4),
